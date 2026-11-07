@@ -10,6 +10,7 @@ DISCOUNT_PERCENT_DIVISOR = 100
 DISCOUNT_ROUNDING_BIAS = DISCOUNT_PERCENT_DIVISOR // 2
 FREE_DELIVERY_THRESHOLD = 10000
 DELIVERY_FEE_CENTS = 600
+EXPRESS_DELIVERY_FEE_CENTS = 1200
 
 
 class OrderService:
@@ -22,8 +23,8 @@ class OrderService:
     def _price_request(self, state, customer_type, items, fulfillment):
         if customer_type not in ("regular", "student"):
             raise ValueError("Customer type must be regular or student.")
-        if fulfillment not in ("pickup", "delivery"):
-            raise ValueError("Fulfillment must be pickup or delivery.")
+        if fulfillment not in ("pickup", "delivery", "express"):
+            raise ValueError("Fulfillment must be pickup, delivery, or express.")
         if not isinstance(items, list) or not items:
             raise ValueError("An order must contain at least one item.")
         lines = []
@@ -57,9 +58,12 @@ class OrderService:
             discount = (
                 subtotal * STUDENT_DISCOUNT_PERCENT + DISCOUNT_ROUNDING_BIAS
             ) // DISCOUNT_PERCENT_DIVISOR
-        delivery = 0
-        if fulfillment == "delivery" and subtotal - discount < FREE_DELIVERY_THRESHOLD:
+        if fulfillment == "express":
+            delivery = EXPRESS_DELIVERY_FEE_CENTS
+        elif fulfillment == "delivery" and subtotal - discount < FREE_DELIVERY_THRESHOLD:
             delivery = DELIVERY_FEE_CENTS
+        else:
+            delivery = 0
         return {
             "customer_type": customer_type,
             "fulfillment": fulfillment,

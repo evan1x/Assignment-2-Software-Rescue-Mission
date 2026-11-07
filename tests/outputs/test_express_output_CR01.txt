@@ -1,0 +1,15 @@
+test_cli_express_quote_reports_8400 (tests.test_express.ExpressDeliveryTests.test_cli_express_quote_reports_8400) ... ok
+test_cli_omitted_options_stay_regular_pickup (tests.test_express.ExpressDeliveryTests.test_cli_omitted_options_stay_regular_pickup) ... ok
+test_cli_place_express_order_saves_fee_and_stock (tests.test_express.ExpressDeliveryTests.test_cli_place_express_order_saves_fee_and_stock) ... ok
+test_express_fee_is_not_waived_when_standard_delivery_is_free (tests.test_express.ExpressDeliveryTests.test_express_fee_is_not_waived_when_standard_delivery_is_free) ... ok
+test_express_quote_matches_order_after_reopen_and_cancel (tests.test_express.ExpressDeliveryTests.test_express_quote_matches_order_after_reopen_and_cancel) ... ok
+test_menu_accepts_express_and_blank_fulfillment_stays_pickup (tests.test_express.ExpressDeliveryTests.test_menu_accepts_express_and_blank_fulfillment_stays_pickup) ... ok
+test_other_fulfillment_values_still_rejected (tests.test_express.ExpressDeliveryTests.test_other_fulfillment_values_still_rejected) ... ok
+test_quote_help_lists_express (tests.test_express.ExpressDeliveryTests.test_quote_help_lists_express) ... ok
+test_regular_express_two_notebooks (tests.test_express.ExpressDeliveryTests.test_regular_express_two_notebooks) ... ok
+test_student_express_two_hoodies (tests.test_express.ExpressDeliveryTests.test_student_express_two_hoodies) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.032s
+
+OK
