@@ -1,0 +1,65 @@
+test_cli_express_quote_reports_8400 (test_express.ExpressDeliveryTests.test_cli_express_quote_reports_8400) ... ok
+test_cli_omitted_options_stay_regular_pickup (test_express.ExpressDeliveryTests.test_cli_omitted_options_stay_regular_pickup) ... ok
+test_cli_place_express_order_saves_fee_and_stock (test_express.ExpressDeliveryTests.test_cli_place_express_order_saves_fee_and_stock) ... ok
+test_express_fee_is_not_waived_when_standard_delivery_is_free (test_express.ExpressDeliveryTests.test_express_fee_is_not_waived_when_standard_delivery_is_free) ... ok
+test_express_quote_matches_order_after_reopen_and_cancel (test_express.ExpressDeliveryTests.test_express_quote_matches_order_after_reopen_and_cancel) ... ok
+test_menu_accepts_express_and_blank_fulfillment_stays_pickup (test_express.ExpressDeliveryTests.test_menu_accepts_express_and_blank_fulfillment_stays_pickup) ... ok
+test_other_fulfillment_values_still_rejected (test_express.ExpressDeliveryTests.test_other_fulfillment_values_still_rejected) ... ok
+test_quote_help_lists_express (test_express.ExpressDeliveryTests.test_quote_help_lists_express) ... ok
+test_regular_express_two_notebooks (test_express.ExpressDeliveryTests.test_regular_express_two_notebooks) ... ok
+test_student_express_two_hoodies (test_express.ExpressDeliveryTests.test_student_express_two_hoodies) ... ok
+test_cancelled_orders_remain_in_history_and_ids_are_not_reused (test_safety_net.OrderServiceSafetyNetTests.test_cancelled_orders_remain_in_history_and_ids_are_not_reused) ... ok
+test_cancelling_twice_does_not_restore_stock_twice (test_safety_net.OrderServiceSafetyNetTests.test_cancelling_twice_does_not_restore_stock_twice) ... FAIL
+test_duplicate_product_lines_above_stock_rejected_in_placement (test_safety_net.OrderServiceSafetyNetTests.test_duplicate_product_lines_above_stock_rejected_in_placement) ... FAIL
+test_duplicate_product_lines_above_stock_rejected_in_quote (test_safety_net.OrderServiceSafetyNetTests.test_duplicate_product_lines_above_stock_rejected_in_quote) ... FAIL
+test_invalid_quantities_rejected_without_mutating_state (test_safety_net.OrderServiceSafetyNetTests.test_invalid_quantities_rejected_without_mutating_state) ... ok
+test_multi_item_regular_pickup_quote (test_safety_net.OrderServiceSafetyNetTests.test_multi_item_regular_pickup_quote) ... ok
+test_order_can_use_exactly_remaining_stock (test_safety_net.OrderServiceSafetyNetTests.test_order_can_use_exactly_remaining_stock) ... ok
+test_placing_order_deducts_stock_and_persists_history (test_safety_net.OrderServiceSafetyNetTests.test_placing_order_deducts_stock_and_persists_history) ... ok
+test_quote_does_not_reserve_stock_or_create_save_file (test_safety_net.OrderServiceSafetyNetTests.test_quote_does_not_reserve_stock_or_create_save_file) ... ok
+test_quoted_items_and_prices_match_placed_order (test_safety_net.OrderServiceSafetyNetTests.test_quoted_items_and_prices_match_placed_order) ... ok
+test_student_discount_applies_at_exactly_5000_cents (test_safety_net.OrderServiceSafetyNetTests.test_student_discount_applies_at_exactly_5000_cents) ... FAIL
+test_unknown_product_or_unsupported_options_do_not_mutate_state (test_safety_net.OrderServiceSafetyNetTests.test_unknown_product_or_unsupported_options_do_not_mutate_state) ... ok
+test_cancel_order_restores_stock (test_smoke.OrderSmokeTests.test_cancel_order_restores_stock) ... ok
+test_order_can_be_reopened (test_smoke.OrderSmokeTests.test_order_can_be_reopened) ... ok
+test_regular_pickup_quote (test_smoke.OrderSmokeTests.test_regular_pickup_quote) ... ok
+test_student_delivery_quote (test_smoke.OrderSmokeTests.test_student_delivery_quote) ... ok
+
+======================================================================
+FAIL: test_cancelling_twice_does_not_restore_stock_twice (test_safety_net.OrderServiceSafetyNetTests.test_cancelling_twice_does_not_restore_stock_twice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\evann\Documents\Coding Projects\COMP3415-A2-Campus-Supply-Desk\tests\test_safety_net.py", line 303, in test_cancelling_twice_does_not_restore_stock_twice
+    self.assertEqual(
+AssertionError: 10 != 8
+
+======================================================================
+FAIL: test_duplicate_product_lines_above_stock_rejected_in_placement (test_safety_net.OrderServiceSafetyNetTests.test_duplicate_product_lines_above_stock_rejected_in_placement)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\evann\Documents\Coding Projects\COMP3415-A2-Campus-Supply-Desk\tests\test_safety_net.py", line 231, in test_duplicate_product_lines_above_stock_rejected_in_placement
+    with self.assertRaises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_duplicate_product_lines_above_stock_rejected_in_quote (test_safety_net.OrderServiceSafetyNetTests.test_duplicate_product_lines_above_stock_rejected_in_quote)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\evann\Documents\Coding Projects\COMP3415-A2-Campus-Supply-Desk\tests\test_safety_net.py", line 218, in test_duplicate_product_lines_above_stock_rejected_in_quote
+    with self.assertRaises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_student_discount_applies_at_exactly_5000_cents (test_safety_net.OrderServiceSafetyNetTests.test_student_discount_applies_at_exactly_5000_cents)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\evann\Documents\Coding Projects\COMP3415-A2-Campus-Supply-Desk\tests\test_safety_net.py", line 116, in test_student_discount_applies_at_exactly_5000_cents
+    self.assertEqual(result["discount_cents"], 500)
+AssertionError: 0 != 500
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.050s
+
+FAILED (failures=4)
